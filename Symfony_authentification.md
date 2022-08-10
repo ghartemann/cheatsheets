@@ -30,60 +30,65 @@ Ces instructions song valables pour Symfony 6.1. Se référer à [la doc](https:
 
 3. Modifier LoginController.php pour qu'il corresponde à
 
-        use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
+```php
+use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
-        class LoginController extends AbstractController
-        {
-            #[Route('/login', name: 'app_login')]
-            public function index(AuthenticationUtils $authenticationUtils): Response
-            {
-                // get the login error if there is one
-                $error = $authenticationUtils->getLastAuthenticationError();
+class LoginController extends AbstractController
+{
+    #[Route('/login', name: 'app_login')]
+    public function index(AuthenticationUtils $authenticationUtils): Response
+    {
+        // get the login error if there is one
+        $error = $authenticationUtils->getLastAuthenticationError();
 
-                // last username entered by the user
-                $lastUsername = $authenticationUtils->getLastUsername();
+        // last username entered by the user
+        $lastUsername = $authenticationUtils->getLastUsername();
 
-                return $this->render('login/index.html.twig', [
-                    'last_username' => $lastUsername,
-                    'error'         => $error,
-                ]);
-            }
-        }
+        return $this->render('login/index.html.twig', [
+            'last_username' => $lastUsername,
+            'error'         => $error,
+        ]);
+    }
+}
+```
 
 4. Modifier templates/login/index.html.twig pour qu'il corresponde à
 
-        {% extends 'base.html.twig' %}
+```html
+{% extends 'base.html.twig' %}
 
-        {% block body %}
-            {% if error %}
-                <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-            {% endif %}
+{% block body %}
+    {% if error %}
+        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
 
-            <form action="{{ path('app_login') }}" method="post">
-                <label for="username">Email:</label>
-                <input type="text" id="username" name="_username" value="{{ last_username }}"/>
+    <form action="{{ path('app_login') }}" method="post">
+        <label for="username">Email:</label>
+        <input type="text" id="username" name="_username" value="{{ last_username }}"/>
 
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="_password"/>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="_password"/>
 
-                {# If you want to control the URL the user is redirected to on success
-                <input type="hidden" name="_target_path" value="/account"/> #}
+        {# If you want to control the URL the user is redirected to on success
+        <input type="hidden" name="_target_path" value="/account"/> #}
 
-                <button type="submit">login</button>
-            </form>
-        {% endblock %}
+        <button type="submit">login</button>
+    </form>
+{% endblock %}```
 
 ## Protection CSRF :
 1. Dans le fichier config/packages/security.yaml, rajouter la ligne
 
-        security:
+```yaml
+security:
+# ...
+firewalls:
+    secured_area:
         # ...
-        firewalls:
-            secured_area:
-                # ...
-                form_login:
-                    # ...
-                    enable_csrf: true
+        form_login:
+            # ...
+            enable_csrf: true
+```
 
 2. Dans templates/login/index.html.twig, ajouter au dessus du bouton submit
 
