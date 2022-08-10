@@ -27,10 +27,14 @@
 
 ## Webpack Encore / SassLoader :
 1. Installer Webpack Encore
+
         composer require symfony/webpack-encore-bundle
+
 2. Installer SassLoader
+
         yarn add sass-loader@^12.0.0 sass --dev
 3. Dans webpack.config.js, décommenter la ligne 59
+
         //.enableSassLoader()
 5. Modifier dans app.js -> app.css en app.scss
 
