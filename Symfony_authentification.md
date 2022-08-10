@@ -5,28 +5,36 @@ Ces instructions song valables pour Symfony 6.1. Se référer à [la doc](https:
 ## Utilisateurs :
 1. Créer un utilisateur
 
-        symfony console make:user
+```bash
+symfony console make:user
+```
 
 2. Effectuer une migration
 
-        php bin/console make:migration
-        php bin/console doctrine:migrations:migrate
+```bash
+php bin/console make:migration
+php bin/console doctrine:migrations:migrate
+```
 
 ## Authentification :
 1. Créer le controller
 
-        symfony console make:controller Login
+```bash
+symfony console make:controller Login
+```
 
 2. Dans le fichier config/packages/security.yaml, rajouter les lignes
 
-        security:
+```yaml
+security:
+    # ...
+    firewalls:
+        main:
             # ...
-            firewalls:
-                main:
-                    # ...
-                    form_login:
-                        login_path: app_login
-                        check_path: app_login
+            form_login:
+                login_path: app_login
+                check_path: app_login
+```
 
 3. Modifier LoginController.php pour qu'il corresponde à
 
@@ -74,7 +82,8 @@ class LoginController extends AbstractController
 
         <button type="submit">login</button>
     </form>
-{% endblock %}```
+{% endblock %}
+```
 
 ## Protection CSRF :
 1. Dans le fichier config/packages/security.yaml, rajouter la ligne
@@ -92,4 +101,6 @@ firewalls:
 
 2. Dans templates/login/index.html.twig, ajouter au dessus du bouton submit
 
-        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+```html
+<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+```
