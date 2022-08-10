@@ -27,10 +27,8 @@ symfony console make:controller Login
 
 ```yaml
 security:
-    # ...
     firewalls:
         main:
-            # ...
             form_login:
                 login_path: app_login
                 check_path: app_login
@@ -85,22 +83,75 @@ class LoginController extends AbstractController
 {% endblock %}
 ```
 
-## Protection CSRF
+## Déconnexion
+
+1. Ajouter les lignes suivantes dans config/packages/security.yaml
+```yaml
+security:
+    firewalls:
+        main:
+            logout:
+                path: app_logout
+
+                # where to redirect after logout
+                # target: app_any_route
+```
+
+2. Créer une route spécifique dans le controller (ici SecurityController.php mais probablement plus dans LoginController.php ? À vérifier)
+```php
+namespace App\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Routing\Annotation\Route;
+
+class SecurityController extends AbstractController
+{
+    #[Route('/logout', name: 'app_logout', methods: ['GET'])]
+    public function logout()
+    {
+        // controller can be blank: it will never be called!
+        throw new \Exception('Don\'t forget to activate logout in security.yaml');
+    }
+}
+```
+
+## Remember me
+TODO : https://symfony.com/doc/current/security/remember_me.html
+
+## Sécurité
+### Protection CSRF
 1. Dans le fichier config/packages/security.yaml, rajouter la ligne
 
 ```yaml
 security:
-# ...
-firewalls:
-    secured_area:
-        # ...
-        form_login:
-            # ...
-            enable_csrf: true
+    firewalls:
+        secured_area:
+            form_login:
+                enable_csrf: true
 ```
 
 2. Dans templates/login/index.html.twig, ajouter au dessus du bouton submit
 
 ```html
 <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+```
+
+### Limiter les tentatives de connexion
+Pour éviter le bruteforcing par exemple, ajouter les lignes suivantes à config/packages/security.yaml (selon celles qui vous intéressent)
+
+```yaml
+security:
+    firewalls:
+        main:
+            # by default, the feature allows 5 login attempts per minute
+            login_throttling: null
+
+            # configure the maximum login attempts (per minute)
+            login_throttling:
+                max_attempts: 3
+
+            # configure the maximum login attempts in a custom period of time
+            login_throttling:
+                max_attempts: 3
+                interval: '15 minutes'
 ```
