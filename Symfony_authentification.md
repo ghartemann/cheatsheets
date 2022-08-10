@@ -2,7 +2,7 @@
 
 Ces instructions sont valables pour Symfony 6.1. Se référer à [la doc](https://symfony.com/doc/current/security.html#form-login) en cas de doute.
 
-## Utilisateurs :
+## Utilisateurs
 1. Créer un utilisateur
 
 ```bash
@@ -16,7 +16,7 @@ php bin/console make:migration
 php bin/console doctrine:migrations:migrate
 ```
 
-## Authentification :
+## Authentification
 1. Créer le controller
 
 ```bash
@@ -85,7 +85,7 @@ class LoginController extends AbstractController
 {% endblock %}
 ```
 
-## Protection CSRF :
+## Protection CSRF
 1. Dans le fichier config/packages/security.yaml, rajouter la ligne
 
 ```yaml

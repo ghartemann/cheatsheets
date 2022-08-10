@@ -1,6 +1,6 @@
 # Symfony
 
-## Dans le cas d'un projet from scratch :
+## Dans le cas d'un projet from scratch
 1. Initialiser le projet Symfony
 
 ```bash
@@ -25,7 +25,7 @@ symfony console doctrine:database:create
 composer require --dev orm-fixtures
 ```
 
-## Dans le cas d'un git clone :
+## Dans le cas d'un git clone
 1. Installer les dépendances composer
 
 ```bash
@@ -62,7 +62,7 @@ symfony console doctrine:migrations:migrate
 symfony console doctrine:fixtures:load
 ```
 
-## Webpack Encore / SassLoader :
+## Webpack Encore / SassLoader
 1. Installer Webpack Encore
 
 ```bash
@@ -89,7 +89,7 @@ yarn encore dev-server
 yarn encore dev
 ```
 
-## Bootstrap :
+## Bootstrap
 1. Installer bootstrap
 
 ```bash
