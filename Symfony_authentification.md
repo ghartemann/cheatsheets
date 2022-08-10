@@ -1,6 +1,6 @@
 # Authentification sous Symfony
 
-Ces instructions song valables pour Symfony 6.1. Se référer à [la doc](https://symfony.com/doc/current/security.html#form-login) en cas de doute.
+Ces instructions sont valables pour Symfony 6.1. Se référer à [la doc](https://symfony.com/doc/current/security.html#form-login) en cas de doute.
 
 ## Utilisateurs :
 1. Créer un utilisateur
