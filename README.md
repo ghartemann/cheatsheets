@@ -9,6 +9,7 @@ Je viens de démarrer ce repo et l'alimenterai au fur et à mesure.
 - [Authentification](cheatsheets/Symfony/Symfony_authentification.md)
 - [Tests](cheatsheets/Symfony/Symfony_tests.md)
 - [Routes avancées](cheatsheets/Symfony/Symfony_routes.md)
+- [Doctrine](cheatsheets/Symfony/Symfony_doctrine.md)
 
 ### Ionos
 - [Héberger un projet](cheatsheets/Ionos/ionos.md)
