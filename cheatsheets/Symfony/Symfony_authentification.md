@@ -118,6 +118,12 @@ class SecurityController extends AbstractController
 ## Remember me
 TODO : https://symfony.com/doc/current/security/remember_me.html
 
+## Création de compte
+TODO
+```bash
+symfony console make:registration
+```
+
 ## Sécurité
 ### Protection CSRF
 1. Dans le fichier config/packages/security.yaml, rajouter la ligne
