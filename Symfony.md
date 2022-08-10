@@ -2,16 +2,27 @@
 
 ## Dans le cas d'un git clone :
 1. Installer les dépendances composer
+
         composer install
+
 2. Installer les dépendances yarn
+
         yarn install
+
 3. Modifier le fichier .env ou .env.local
+
         DATABASE_URL="mysql://USER:PASSWORD@127.0.0.1:3306/DBNAME?serverVersion=8&charset=utf8mb4"
+
 4. Créer la BDD
+
         symfony console doctrine:database:create
+
 5. Effectuer les ligrations
+
         symfony console doctrine:migrations:migrate
+
 6. Charger les fxtures
+
         symfony console doctrine:fixtures:load
 
 ## Webpack Encore / SassLoader :
