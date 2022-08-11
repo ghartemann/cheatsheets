@@ -135,5 +135,5 @@ require('bootstrap');
 2. Installer file loader
 
 ```bash
-composer install <MISSING>
+yarn add file-loader@^6.0.0 --dev
 ```
