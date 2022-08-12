@@ -32,19 +32,26 @@ class CustomerType extends AbstractType
 
 ## Types d'inputs
 
-Champ à choix multiples
+Quelques exemples :
+- Champ à choix multiples
 
 ```php
 ChoiceType::class
 ```
 
-Champ date
+- Champ date
 
 ```php
-DateType::class : Pour un champ date
+DateType::class
 ```
 
-TODO: ajouter le reste
+- Champ téléphone
+
+```php
+TelType::class
+```
+
+[Voir la liste complète](https://symfony.com/doc/current/reference/forms/types.html)
 
 
 ## Passer un tableau d'options
@@ -68,7 +75,7 @@ public function new(
     CustomerRepository  $customerRepository
 ): Response
 {
-    $wilder = new Customer();
+    $customer = new Customer();
     $form = $this->createForm(WilderType::class, $customer);
     $form->handleRequest($request);
 
