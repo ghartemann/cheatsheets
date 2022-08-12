@@ -14,7 +14,6 @@ alias zshconfig="code ~/.zshrc"
 ```
 
 ## Mes aliases
-
 ```zsh
 # Example aliases
 alias zshconfig="code ~/.zshrc"
