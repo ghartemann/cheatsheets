@@ -2,6 +2,7 @@
 
 ## Créer un formulaire
 
+### Créer un Type
 On utilise la commande
 
 ```bash
@@ -16,7 +17,7 @@ class CustomerType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('firstname', TextType::class) // il faut repasser ici pour changer le type d'input si besoin
+            ->add('firstname', TextType::class)
             ->add('lastname', TextType::class)
             ->add('email', EmailType::class);
     }
@@ -30,7 +31,33 @@ class CustomerType extends AbstractType
 }
 ```
 
-## Types d'inputs
+### Afficher le formulaire
+Pour afficher un formulaire via Twig, on intervient dans deux fichiers : un form et la page plus générale qui incluera ce dernier.
+
+Dans customer/_form.html.twig :
+```html
+{{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}
+```
+
+Dans customer/add.html.twig :
+```html
+{% extends 'base.html.twig' %}
+
+{% block title %}New Customer{% endblock %}
+
+{% block body %}
+    <h1>Create a new customer</h1>
+    {{ include('customer/_form.html.twig') }}
+    <a href="{{ path('customer_index') }}">Back</a>
+{% endblock %}
+```
+
+## Personnaliser le formulaire
+
+### Types d'inputs
 
 Quelques exemples :
 - Champ à choix multiples
@@ -64,59 +91,9 @@ $builder->add(‘language’, TextType::class, [
 ]);
 ```
 
-## Traiter un formulaire
+## Valider le formulaire
 
-Dans le controller :
-
-```php
-#[Route(“/new”, name: ”wilder_new”, methods: [”GET”, “POST”])]
-public function new(
-    Request             $request, 
-    CustomerRepository  $customerRepository
-): Response
-{
-    $customer = new Customer();
-    $form = $this->createForm(WilderType::class, $customer);
-    $form->handleRequest($request);
-
-    if ($form->isSubmitted() && $form->isValid()) {
-        $customerRepository->add($customer, true)
-    
-        return $this->redirectToRoute('customer_index');
-    }
-
-    return $this->renderForm(customer/new.html.twig’, [
-        ‘wilder’ => $wilder,
-        ‘form’ => $form,
-   ]);
-}
-```
-
-## Affichage
-Pour afficher un formulaire via Twig, on intervient dans deux fichiers : un form et la page plus générale qui incluera ce dernier.
-
-Dans customer/_form.html.twig :
-```html
-{{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
-{{ form_end(form) }}
-```
-
-Dans customer/add.html.twig :
-```html
-{% extends 'base.html.twig' %}
-
-{% block title %}New Customer{% endblock %}
-
-{% block body %}
-    <h1>Create a new customer</h1>
-    {{ include('customer/_form.html.twig') }}
-    <a href="{{ path('customer_index') }}">Back</a>
-{% endblock %}
-```
-
-## Validation de formulaires
+### Ajouter des assertions
 La validation s'effectue dans l'entité elle-même.
 
 On ajoute tout d'abord un use :
@@ -161,7 +138,7 @@ ajoutera
 maxlength=10
 ```
 
-### Types de contrôles :
+### Types d'assertions
 Le champ n'est pas vide :
 ```php
 #[Assert\NotBlank]
@@ -213,7 +190,9 @@ class User
 }
 ```
 
-### Neutraliser la vérification HTML
+[Voir la liste complète](https://symfony.com/doc/current/validation.html#constraints)
+
+### Optionnel : neutraliser la vérification HTML
 Ajouter, dans le type :
 
 ```php
@@ -222,8 +201,7 @@ Ajouter, dans le type :
 {{ form_end(form) }}
 ```
 
-### Dans le controller
-
+### Gérer la partie controller
 Ne pas oublier d'ajouter
 
 ```php
@@ -236,3 +214,32 @@ if ($form->isSubmitted() && $form->isValid()) {
     // handle data, in example, an insert into database
     // redirection
 }
+```
+
+## Traiter le formulaire
+
+Exemple d'un traitement de formulaire complet dans le controller :
+
+```php
+#[Route(“/new”, name: ”wilder_new”, methods: [”GET”, “POST”])]
+public function new(
+    Request             $request, 
+    CustomerRepository  $customerRepository
+): Response
+{
+    $customer = new Customer();
+    $form = $this->createForm(WilderType::class, $customer);
+    $form->handleRequest($request);
+
+    if ($form->isSubmitted() && $form->isValid()) {
+        $customerRepository->add($customer, true)
+    
+        return $this->redirectToRoute('customer_index');
+    }
+
+    return $this->renderForm(customer/new.html.twig’, [
+        ‘wilder’ => $wilder,
+        ‘form’ => $form,
+   ]);
+}
+```
