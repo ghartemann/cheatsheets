@@ -10,6 +10,7 @@ Je viens de démarrer ce repo et l'alimenterai au fur et à mesure.
 - [Tests](cheatsheets/Symfony/Symfony_tests.md)
 - [Routes avancées](cheatsheets/Symfony/Symfony_routes.md)
 - [Doctrine](cheatsheets/Symfony/Symfony_doctrine.md)
+- [Formulaires](cheatsheets/Symfony/Symfony_formulaires.md)
 
 ### Ionos
 - [Héberger un projet](cheatsheets/Ionos/ionos.md)
