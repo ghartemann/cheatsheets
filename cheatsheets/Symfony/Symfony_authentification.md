@@ -102,15 +102,16 @@ security:
                 # target: app_any_route
 ```
 
-2. Créer une route spécifique dans le controller (ici SecurityController.php mais probablement plus dans LoginController.php ? À vérifier)
+2. Créer une route spécifique dans LoginController.php
 ```php
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Routing\Annotation\Route;
+//...
 
-class SecurityController extends AbstractController
+class LoginController extends AbstractController
 {
+    //...
+
     #[Route('/logout', name: 'app_logout', methods: ['GET'])]
     public function logout()
     {
