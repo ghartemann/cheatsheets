@@ -12,5 +12,8 @@ Je viens de démarrer ce repo et l'alimenterai au fur et à mesure.
 - [Doctrine](cheatsheets/Symfony/Symfony_doctrine.md)
 - [Formulaires](cheatsheets/Symfony/Symfony_formulaires.md)
 
+### CLI
+- [Aliases](cheatsheets/CLI/aliases.md)
+
 ### Ionos
 - [Héberger un projet](cheatsheets/Ionos/ionos.md)
