@@ -15,6 +15,6 @@ Je viens de démarrer ce repo et l'alimenterai au fur et à mesure.
 ### CLI
 - [Aliases](cheatsheets/CLI/aliases.md)
 
-### Ionos
-- [Héberger un projet](cheatsheets/Ionos/ionos.md)
+### Déploiement
+- [Héberger un projet (IONOS)](cheatsheets/Ionos/ionos.md)
 - [htaccess](cheatsheets/Ionos/htaccess.md)
