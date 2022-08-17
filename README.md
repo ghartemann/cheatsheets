@@ -17,3 +17,4 @@ Je viens de démarrer ce repo et l'alimenterai au fur et à mesure.
 
 ### Ionos
 - [Héberger un projet](cheatsheets/Ionos/ionos.md)
+- [htaccess](cheatsheets/Ionos/htaccess.md)
