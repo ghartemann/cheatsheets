@@ -18,3 +18,6 @@ Je viens de démarrer ce repo et l'alimenterai au fur et à mesure.
 ### Déploiement
 - [Héberger un projet (IONOS)](cheatsheets/Ionos/ionos.md)
 - [htaccess](cheatsheets/Ionos/htaccess.md)
+
+### Les bons liens
+- [UX/UI](cheatsheets/Les-bons-liens/design.md)

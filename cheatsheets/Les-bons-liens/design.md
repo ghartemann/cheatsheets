@@ -11,6 +11,9 @@ Liste **non exhaustive**.
 
 ## CSS
 
+### Outils
+- [Reset CSS](https://meyerweb.com/eric/tools/css/reset/)
+
 ### Tutoriels
 - [CSSReference.io](https://cssreference.io/) : guide visuel pour le CSS
 - [CSS Tricks](https://css-tricks.com)
