@@ -43,6 +43,9 @@ Liste **non exhaustive**.
 
 ## Polices
 - [Canva's Ultimate Guide to Font Pairing](https://www.canva.com/learn/the-ultimate-guide-to-font-pairing/)
+- [Google Fonts](https://fonts.google.com/)
+- [FontAwesome](https://fontawesome.com/)
+    - [Installer dans Symfony](https://fontawesome.com/docs/web/setup/packages)
 
 ## Stock
 - [AllTheFreeStock](https://allthefreestock.com/)
