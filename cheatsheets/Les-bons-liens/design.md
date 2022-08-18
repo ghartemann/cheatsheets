@@ -28,12 +28,14 @@ Liste **non exhaustive**.
 - [DesignBombs](https://www.designbombs.com/freebies/)
 - [LittleSnippets](https://littlesnippets.net/)
 
-## Dégradés
+## Couleurs
+
+### Dégradés
 - [Grabient](https://www.grabient.com/)
 - [MyColor.space](https://mycolor.space/gradient)
 - [CSSGradient](https://cssgradient.io/)
 
-## Palettes
+### Palettes
 - [MyColor.space](https://mycolor.space)
 - [Coolors](https://coolors.co/) : générateur de palettes
 - [Color Hunt](https://colorhunt.co/)
