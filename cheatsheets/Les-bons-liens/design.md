@@ -8,6 +8,8 @@ Liste **non exhaustive**.
 - [FWA](https://thefwa.com/)
 - [CSS Design Awards](https://www.cssdesignawards.com/)
 - [Designspiration](https://www.designspiration.com/)
+- [httpster](https://httpster.net)
+- [sidebar.io](https://sidebar.io/)
 
 ## CSS
 
@@ -40,6 +42,10 @@ Liste **non exhaustive**.
 - [Coolors](https://coolors.co/) : générateur de palettes
 - [Color Hunt](https://colorhunt.co/)
 - [Flat UI Colors](https://flatuicolors.com/)
+- [Physically based](https://physicallybased.info/) : A database of physically based values for CG artists
+
+### Autres
+- [Alphredo](https://alphredo.app/) : Alpha colors generator
 
 ## Polices
 - [Canva's Ultimate Guide to Font Pairing](https://www.canva.com/learn/the-ultimate-guide-to-font-pairing/)
