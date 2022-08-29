@@ -50,7 +50,7 @@ DATABASE_URL="mysql://USER:PASSWORD@127.0.0.1:3306/DBNAME?serverVersion=8&charse
 symfony console doctrine:database:create
 ```
 
-5. Effectuer les ligrations
+5. Effectuer les migrations
 
 ```bash
 symfony console doctrine:migrations:migrate
