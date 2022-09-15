@@ -4,8 +4,9 @@ macOS vient avec sa propre version d'Apache, indépendante de la version install
 
 Ressources :
 - [git-tower](https://www.git-tower.com/blog/apache-on-macos/#installation)
-- [tech-cookbook](https://tech-cookbook.com/2020/11/14/setting-up-your-local-web-server-on-macos-big-sur-11-0-1-2020-mamp-macos-apache-mysql-php/)
-- [wpbeaches](https://wpbeaches.com/updating-to-php-versions-7-4-and-8-on-macos-12-monterey/)
+- [Setting Up Your Local Web Server on macOS Big Sur 11.0.1](https://tech-cookbook.com/2020/11/14/setting-up-your-local-web-server-on-macos-big-sur-11-0-1-2020-mamp-macos-apache-mysql-php/)
+- [Add and install PHP to macOS Monterey 12 with Homebrew](https://wpbeaches.com/updating-to-php-versions-7-4-and-8-on-macos-12-monterey/)
+- [macOS 12.0 Monterey Apache Setup: Multiple PHP Versions](https://getgrav.org/blog/macos-monterey-apache-multiple-php-versions)
 
 ## Installer Apache
 
