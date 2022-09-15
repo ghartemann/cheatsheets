@@ -3,10 +3,11 @@
 macOS vient avec sa propre version d'Apache, indépendante de la version installée par Homebrew. Il est important de paramétrer la bonne version et ce guide en indique les étapes minimales.
 
 Ressources :
-- [git-tower](https://www.git-tower.com/blog/apache-on-macos/#installation)
+- [How To Set Up Apache and PHP from Homebrew on macOS](https://www.git-tower.com/blog/apache-on-macos)
 - [Setting Up Your Local Web Server on macOS Big Sur 11.0.1](https://tech-cookbook.com/2020/11/14/setting-up-your-local-web-server-on-macos-big-sur-11-0-1-2020-mamp-macos-apache-mysql-php/)
 - [Add and install PHP to macOS Monterey 12 with Homebrew](https://wpbeaches.com/updating-to-php-versions-7-4-and-8-on-macos-12-monterey/)
 - [macOS 12.0 Monterey Apache Setup: Multiple PHP Versions](https://getgrav.org/blog/macos-monterey-apache-multiple-php-versions)
+- [Configure a web server - Symfony Docs](https://symfony.com/doc/current/setup/web_server_configuration.html)
 
 ## Installer Apache
 
@@ -17,7 +18,7 @@ sudo apachectl stop
 sudo launchctl unload -w /System/Library/LaunchDaemons/org.apache.httpd.plist
 ```
 
-2. Installer Apache avec homebrew
+2. Installer Apache avec Homebrew
 ``` bash
 brew install httpd
 ```
@@ -100,3 +101,9 @@ brew services stop httpd
 ```bash
 brew services restart httpd
 ```
+
+## Accéder à un fichier
+
+Un fichier placé dans votre dossier /Library/WebServer/Documents (par exemple index.php) sera accessible à l'addresse localhost:80/index.php
+
+TODO: mettre à jour pour la gestion des URL (ex: monsite.test)
