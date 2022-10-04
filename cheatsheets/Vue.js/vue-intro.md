@@ -345,3 +345,79 @@ export default {
     <h2>{{ msg || 'No props passed yet' }}</h2>
 </template>
 ```
+
+### Emits
+
+```Vue
+<!-- App.vue -->
+<script>
+import ChildComp from './ChildComp.vue'
+
+export default {
+    components: {
+        ChildComp
+    },
+    data() {
+        return {
+        childMsg: 'No child msg yet'
+        }
+    }
+}
+</script>
+
+<template>
+    <ChildComp @response="(msg) => childMsg = msg" />
+    <p>{{ childMsg }}</p>
+</template>
+```
+
+```Vue
+<!-- ChildComp.vue -->
+<script>
+export default {
+    emits: ['response'],
+    created() {
+        this.$emit('response', 'hello from child')
+    }
+}
+</script>
+
+<template>
+    <h2>Child component</h2>
+</template>
+```
+
+### Slots
+
+```Vue
+<!-- App.vue -->
+<script>
+import ChildComp from './ChildComp.vue'
+
+export default {
+    components: {
+        ChildComp
+    },
+    data() {
+        return {
+            msg: 'from parent'
+        }
+    }
+}
+</script>
+
+<template>
+    <ChildComp>Message: {{ msg }}</ChildComp>
+</template>
+
+<template>
+    <slot>Fallback content</slot>
+</template>
+```
+
+```Vue
+<!-- ChildComp.vue -->
+<template>
+    <slot>Fallback content</slot>
+</template>
+```
