@@ -67,7 +67,7 @@ export default {
 
 ### Form Bindings
 
-v-model automatically syncs the <input>'s value with the bound state, so we no longer need to use an event handler for that. It works not only on text inputs, but also other input types such as checkboxes, radio buttons, and select dropdowns.
+v-model automatically syncs the `<input>`'s value with the bound state, so we no longer need to use an event handler for that. It works not only on text inputs, but also other input types such as checkboxes, radio buttons, and select dropdowns.
 
 ```Vue
 <script>
@@ -88,7 +88,7 @@ export default {
 
 ### Conditional Rendering
 
-This <h1> will be rendered only if the value of awesome is truthy. If awesome changes to a falsy value, it will be removed from the DOM.
+This `<h1>` will be rendered only if the value of awesome is truthy. If awesome changes to a falsy value, it will be removed from the DOM.
 
 ```Vue
 <script>
