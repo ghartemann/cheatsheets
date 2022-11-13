@@ -2,7 +2,7 @@
 
 ### Declarative Rendering
 
-```Vue
+```js
 <script>
 export default {
     data() {
@@ -20,7 +20,7 @@ export default {
 
 ### Attribute Bindings
 
-```Vue
+```js
 <script>
 export default {
     data() {
@@ -44,7 +44,7 @@ export default {
 
 ### Event Listeners
 
-```Vue
+```js
 <script>
 export default {
     data() {
@@ -69,7 +69,7 @@ export default {
 
 v-model automatically syncs the `<input>`'s value with the bound state, so we no longer need to use an event handler for that. It works not only on text inputs, but also other input types such as checkboxes, radio buttons, and select dropdowns.
 
-```Vue
+```js
 <script>
 export default {
     data() {
@@ -90,7 +90,7 @@ export default {
 
 This `<h1>` will be rendered only if the value of awesome is truthy. If awesome changes to a falsy value, it will be removed from the DOM.
 
-```Vue
+```js
 <script>
 export default {
     data() {
@@ -115,7 +115,7 @@ export default {
 
 ### List Rendering
 
-```Vue
+```js
 <script>
 // give each todo a unique id
 let id = 0
@@ -159,7 +159,7 @@ export default {
 
 ### Computed Property
 
-```Vue
+```js
 <script>
 let id = 0
 
@@ -222,13 +222,13 @@ export default {
 
 We can request a template ref - i.e. a reference to an element in the template - using the special ref attribute:
 
-```Vue
+```js
 <p ref="p">hello</p>
 ```
 
 The element will be exposed on this.$refs as this.$refs.p. However, you can only access it after the component is mounted.
 
-```Vue
+```js
 <script>
 export default {
     mounted() {
@@ -244,7 +244,7 @@ export default {
 
 ### Watchers
 
-```Vue
+```js
 <script>
 export default {
     data() {
@@ -283,7 +283,7 @@ export default {
 
 ### Components
 
-```Vue
+```js
 <!-- App.vue -->
 <script>
 import ChildComp from './ChildComp.vue'
@@ -300,7 +300,7 @@ export default {
 </template>
 ```
 
-```Vue
+```js
 <!-- ChildComp.vue -->
 <template>
     <h2>A Child Component!</h2>
@@ -309,7 +309,7 @@ export default {
 
 ### Props
 
-```Vue
+```js
 <!-- App.vue -->
 <script>
 import ChildComp from './ChildComp.vue'
@@ -331,7 +331,7 @@ export default {
 </template>
 ```
 
-```Vue
+```js
 <!-- ChildComp.vue -->
 <script>
 export default {
@@ -348,7 +348,7 @@ export default {
 
 ### Emits
 
-```Vue
+```js
 <!-- App.vue -->
 <script>
 import ChildComp from './ChildComp.vue'
@@ -371,7 +371,7 @@ export default {
 </template>
 ```
 
-```Vue
+```js
 <!-- ChildComp.vue -->
 <script>
 export default {
@@ -389,7 +389,7 @@ export default {
 
 ### Slots
 
-```Vue
+```js
 <!-- App.vue -->
 <script>
 import ChildComp from './ChildComp.vue'
@@ -415,7 +415,7 @@ export default {
 </template>
 ```
 
-```Vue
+```js
 <!-- ChildComp.vue -->
 <template>
     <slot>Fallback content</slot>
