@@ -14,6 +14,7 @@ Liste **non exhaustive**.
 ## CSS
 
 ### Outils
+- [Can I email](https://www.caniemail.com/features/css-display-flex/) : quels éléments CSS3 fonctionnent dans une newsletter ?
 - [Reset CSS](https://meyerweb.com/eric/tools/css/reset/)
 
 ### Tutoriels

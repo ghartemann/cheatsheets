@@ -14,6 +14,7 @@ Je viens de démarrer ce repo et l'alimenterai au fur et à mesure.
 
 ### Vue.js
 - [Intro](cheatsheets/Vue.js/vue-intro.md)
+- [Installer Vue.js dans un projet Symfony](cheatsheets/Vue.js/vue_symfony.md)
 
 ### CLI
 - [Aliases](cheatsheets/CLI/aliases.md)
