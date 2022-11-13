@@ -12,6 +12,9 @@ Je viens de démarrer ce repo et l'alimenterai au fur et à mesure.
 - [Doctrine](cheatsheets/Symfony/Symfony_doctrine.md)
 - [Formulaires](cheatsheets/Symfony/Symfony_formulaires.md)
 
+### Vue.js
+- [Installer Vue.js dans un projet SYmfony](cheatsheets/Vue.js/vue_symfony.md)
+
 ### CLI
 - [Aliases](cheatsheets/CLI/aliases.md)
 
